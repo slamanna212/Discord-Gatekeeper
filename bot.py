@@ -56,7 +56,7 @@ async def verify(ctx, code):
             database.dump(context)
     else:
         await ctx.send("You have entered an incorrect code, Please check again or send a PM to Discord Modmail")
-       await ctx.message.delete()
+        await ctx.message.delete()
 
 if __name__ == '__main__':
     context = database.open()
