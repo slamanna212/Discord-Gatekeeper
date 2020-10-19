@@ -1,5 +1,4 @@
 FROM python:3.8.6-slim-buster
-MKDIR /app
 COPY . /app
 WORKDIR /app
 RUN pip install --upgrade pip
