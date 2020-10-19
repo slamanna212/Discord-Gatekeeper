@@ -38,6 +38,8 @@ async def on_member_join(member):
     code = str(uuid.uuid4())[:6]
     context['userdb'][code] = member.id
     database.dump(context)
+    channel = bot.get_channel (context['channel'])
+    await channel.send(f"**Welcome to the server **{member.mention}\n\n Please check your PM from @Gatekeeper#8190 , read the rules and the paste the command it gives you in this channel. Breaking certian rules gives you a permanent ban with no warning.")
     await member.send(context['one'])
     await member.send(context['two'])
     await member.send(f"{context['three']}\n\nType this command in #welcome to verify: `!verify {code}`")
@@ -55,7 +57,7 @@ async def verify(ctx, code):
             del context['userdb'][code]
             database.dump(context)
     else:
-        await ctx.send("You have entered an incorrect code, Please check again or send a PM to Discord Modmail")
+        await ctx.send("You have entered an incorrect code, Please check again or send a PM to Modmail")
         await ctx.message.delete()
 
 if __name__ == '__main__':
