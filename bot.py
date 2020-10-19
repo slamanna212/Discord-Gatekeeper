@@ -24,7 +24,7 @@ database = DbHandler('settings.json')
 
 @bot.event
 async def on_ready():
-    print("bot is ready")
+    print("Bot has Loaded")
 
 
 @bot.event
