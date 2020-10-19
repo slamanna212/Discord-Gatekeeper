@@ -52,7 +52,7 @@ async def verify(ctx, code):
             del context['userdb'][code]
             database.dump(context)
     else:
-        await ctx.send("The code is incorrect")
+        await ctx.send("You have entered an incorrect code, Please check again or send a PM to modmail (A user in this channel)")
         await ctx.message.delete()
 
 if __name__ == '__main__':
