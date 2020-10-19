@@ -4,6 +4,9 @@ import json
 from discord.utils import get
 import asyncio
 
+import logging
+
+logging.basicConfig(level=logging.WARNING)
 
 class DbHandler:
     def __init__(self, file):
