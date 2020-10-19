@@ -4,6 +4,7 @@ import json
 from discord.utils import get
 import asyncio
 
+# Warning logging to the console
 import logging
 
 logging.basicConfig(level=logging.WARNING)
@@ -24,12 +25,12 @@ class DbHandler:
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('!'), case_insensitive=True)
 database = DbHandler('settings.json')
 
-
+# Prints to console when bot is loaded and ready to handle users
 @bot.event
 async def on_ready():
     print("Bot has Loaded")
 
-
+# Event that triggers when someone joins the server
 @bot.event
 async def on_member_join(member):
     context = database.open()
@@ -40,7 +41,7 @@ async def on_member_join(member):
     await member.send(context['two'])
     await member.send(f"{context['three']}\n\nType this command in #welcome to verify: `!verify {code}`")
 
-
+# Event for when someone enters their verification code
 @bot.command()
 async def verify(ctx, code):
     context = database.open()
