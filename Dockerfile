@@ -3,7 +3,7 @@ COPY . /app
 WORKDIR /app
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-CMD python ./app/bot.py 
+CMD python /app/bot.py 
 
 # volume
 VOLUME /app
