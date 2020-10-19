@@ -38,7 +38,7 @@ async def on_member_join(member):
     database.dump(context)
     await member.send(context['one'])
     await member.send(context['two'])
-    await member.send(f"{context['three']}\n\nType this command to verify: `!verify {code}`")
+    await member.send(f"{context['three']}\n\nType this command in #welcome to verify: `!verify {code}`")
 
 
 @bot.command()
