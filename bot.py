@@ -1,3 +1,4 @@
+import discord
 from discord.ext import commands
 import uuid
 import json
@@ -50,11 +51,11 @@ async def verify(ctx, code):
         if ctx.message.channel.id == context['channel']:
             role = get(ctx.guild.roles, id=context['role'])
             await ctx.message.author.add_roles(role)
+            await ctx.send(ctx.author.mention+" is human and has accepted the rules.")
             del context['userdb'][code]
             database.dump(context)
     else:
         await ctx.send("You have entered an incorrect code, Please check again or send a PM to Discord Modmail")
-        await ctx.send(member)
  #       await ctx.message.delete()
 
 if __name__ == '__main__':
