@@ -49,16 +49,18 @@ async def on_member_join(member):
 async def verify(ctx, code):
     context = database.open()
     if code in context['userdb'].keys():
-        await ctx.message.delete()
         if ctx.message.channel.id == context['channel']:
             role = get(ctx.guild.roles, id=context['role'])
             await ctx.message.author.add_roles(role)
             await ctx.send(ctx.author.mention+" is human and has accepted the rules.")
             del context['userdb'][code]
             database.dump(context)
+            await ctx.message.delete()
+
     else:
         await ctx.send("You have entered an incorrect code, Please check again or send a PM to Modmail")
         await ctx.message.delete()
+        
 
 if __name__ == '__main__':
     context = database.open()
