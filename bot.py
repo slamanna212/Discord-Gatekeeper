@@ -39,7 +39,7 @@ async def on_member_join(member):
     context['userdb'][code] = member.id
     database.dump(context)
     channel = bot.get_channel (context['channel'])
-    await channel.send(f"**Welcome to the server **{member.mention}\n\n Please check your PM from @Gatekeeper#8190 , read the rules and the paste the command it gives you in this channel. Breaking certian rules gives you a permanent ban with no warning.")
+    await channel.send(f"**Welcome to the server **{member.mention} \n\n I sent you a **Private Message** read the rules and the paste the command it gives you in this channel. Breaking certian rules gives you a permanent ban with no warning.")
     await member.send(context['one'])
     await member.send(context['two'])
     await member.send(f"{context['three']}\n\nType this command in #welcome to verify: `!verify {code}`")
