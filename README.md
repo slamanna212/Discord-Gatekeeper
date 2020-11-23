@@ -49,7 +49,7 @@ YOURDOCKERHUBACCOUNTNAME/discordgatekeeper
 7. If you want to verify its working, just check the logs for the container
 
 # Credits
-Initial code from [sourovafrin](https://www.fiverr.com/sourovafrin) on Fivrr
+Initial code from [sourovafrin](https://www.fiverr.com/sourovafrin) on Fivrr  
 Assits from discord members on r/Oilpen
 
 
