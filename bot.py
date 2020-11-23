@@ -29,6 +29,7 @@ database = DbHandler('settings.json')
 # Prints to console when bot is loaded and ready to handle users
 @bot.event
 async def on_ready():
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="the front door"))
     print("Bot has Loaded")
 
 # Event that triggers when someone joins the server
