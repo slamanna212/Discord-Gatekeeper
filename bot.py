@@ -43,8 +43,8 @@ async def on_member_join(member):
     await channel.send(f"**Welcome to the server **{member.mention} \n\n I sent you a **Private Message,** Please read it. It contains the rules that you need to know and a secret command. After you read the rules paste that command in **this** channel. Breaking certian rules gives you a permanent ban with no warning.")
     await member.send(context['one'])
     await member.send(context['two'])
-    await member.send(f"{context['three']}\n\nType this command in #welcome to verify:")
-    await member.send(f"'!verify {code}`")
+    await member.send(f"{context['three']}\n\nCopy Paste this command in #welcome to verify:")
+    await member.send(f"!verify {code}")
     
 
 # Event for when someone enters their verification code
