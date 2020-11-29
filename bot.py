@@ -11,8 +11,7 @@ import logging
 logging.basicConfig(level=logging.WARNING)
 
 # Discord Intents
-intents = discord.Intents.default()
-intents.members = True
+intents = discord.Intents(messages=True, guilds=True, members=True)
 
 class DbHandler:
     def __init__(self, file):
@@ -27,7 +26,7 @@ class DbHandler:
             return json.load(r)
 
 
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('!'), case_insensitive=True)
+bot = commands.Bot(command_prefix=commands.when_mentioned_or('!'), case_insensitive=True, intents=intents)
 database = DbHandler('settings.json')
 
 # Prints to console when bot is loaded and ready to handle users
