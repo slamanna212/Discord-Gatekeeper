@@ -10,6 +10,10 @@ import logging
 
 logging.basicConfig(level=logging.WARNING)
 
+# Discord Intents
+intents = discord.Intents.default()
+intents.members = True
+
 class DbHandler:
     def __init__(self, file):
         self.file = file
